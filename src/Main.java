@@ -35,6 +35,13 @@ public class Main {
         }
         return false;
     }
+    public static void instructions(){
+        System.out.println("\nWelcome to Connect Four!");
+        System.out.println("The game is played on a 6x7 grid.");
+        System.out.println("Players take turns dropping their colored discs into one of the columns.");
+        System.out.println("The first player to connect four of their discs in a row (horizontally, vertically, or diagonally) wins.");
+        System.out.println("If the grid is full and no player has connected four, the game ends in a draw.");
+    }
     public static int get_valid_input(){
         int col;
         while(true){
@@ -257,6 +264,7 @@ public class Main {
         System.out.println("------------------------------\n");
     }
     public static void main(String[] args) throws InterruptedException {
+        instructions();
         getUser();
         run_game();
         stats();
