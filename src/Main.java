@@ -8,6 +8,7 @@ public class Main {
     static int user_choice;
     static int round=0,move=0;
     static char replay='y';
+    static int game_count=0,draw_count=0,loss_count=0,win_count=0;
     public static void reset_board(){
         int i,j;
         for(i=0;i<6;i++){
@@ -106,6 +107,7 @@ public class Main {
         return false;
     }
     public static void getUser() throws InterruptedException {
+        reset_board();
         System.out.println("\nSymbols: (1. \uD83D\uDD34)/(2. \uD83D\uDFE1)");
         System.out.print("Enter your preferred symbol choice (1/2): ");
         while(!isValid()){
@@ -192,10 +194,14 @@ public class Main {
                 print_board();
                 if(hasWon(user)){
                     System.out.println("You won!");
+                    game_count++;
+                    win_count++;
                     break;
                 }
                 if(isDraw()){
                     System.out.println("It's a draw!");
+                    draw_count++;
+                    game_count++;
                     break;
                 }
                 move=1;
@@ -206,10 +212,14 @@ public class Main {
                 print_board();
                 if(hasWon(comp)){
                     System.out.println("Computer won!");
+                    loss_count++;
+                    game_count++;
                     break;
                 }
                 if(isDraw()){
                     System.out.println("It's a draw!");
+                    draw_count++;
+                    game_count++;
                     break;
                 }
                 move=0;
@@ -238,9 +248,17 @@ public class Main {
         }
         System.out.println("Thanks for playing!");
     }
+    public static void stats(){
+        System.out.println("\n------------Statistics-------------");
+        System.out.println("Games Played: " + game_count);
+        System.out.println("Wins: " + win_count);
+        System.out.println("Losses: " + loss_count);
+        System.out.println("Draws: " + draw_count);
+        System.out.println("------------------------------\n");
+    }
     public static void main(String[] args) throws InterruptedException {
-        reset_board();
         getUser();
         run_game();
+        stats();
     }
 }
