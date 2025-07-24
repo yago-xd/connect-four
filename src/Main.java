@@ -194,21 +194,25 @@ public class Main {
     public static void start_game() throws InterruptedException {
         reset_board();
         first_move();
+        int moves=1;
         while(true) {
             if (move==0){
                 System.out.println("Your move");
                 user_move();
+                moves++;
                 print_board();
                 if(hasWon(user)){
                     System.out.println("You won!");
                     game_count++;
                     win_count++;
+                    score(moves);
                     break;
                 }
                 if(isDraw()){
                     System.out.println("It's a draw!");
                     draw_count++;
                     game_count++;
+                    score(moves);
                     break;
                 }
                 move=1;
@@ -216,22 +220,31 @@ public class Main {
             if (move==1){
                 System.out.println("Computer's move");
                 comp_move();
+                moves++;
                 print_board();
                 if(hasWon(comp)){
                     System.out.println("Computer won!");
                     loss_count++;
                     game_count++;
+                    score(moves);
                     break;
                 }
                 if(isDraw()){
                     System.out.println("It's a draw!");
                     draw_count++;
                     game_count++;
+                    score(moves);
                     break;
                 }
                 move=0;
             }
         }
+    }
+    public static void score(int moves){
+        int score=(107-moves)*2;
+        score = Math.max(score, 0);
+        System.out.println("Number of moves made in this round: " + moves);
+        System.out.println("Score for this round: " + score);
     }
     public static void run_game() throws InterruptedException {
         replay='y';
