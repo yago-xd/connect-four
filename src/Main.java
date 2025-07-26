@@ -141,7 +141,7 @@ public class Main {
         System.out.println("\nRound "+round);
         System.out.print("\nThe first move will be made by: ");
         int first= rand.nextInt(1,3)-1;
-        Thread.sleep(2000);
+        Thread.sleep(1500);
         if(first==0){
             System.out.println("You");
             user_move();
@@ -205,14 +205,14 @@ public class Main {
                     System.out.println("You won!");
                     game_count++;
                     win_count++;
-                    score(moves);
+                    score(moves,'w');
                     break;
                 }
                 if(isDraw()){
                     System.out.println("It's a draw!");
                     draw_count++;
                     game_count++;
-                    score(moves);
+                    score(moves,'d');
                     break;
                 }
                 move=1;
@@ -226,22 +226,28 @@ public class Main {
                     System.out.println("Computer won!");
                     loss_count++;
                     game_count++;
-                    score(moves);
+                    score(moves,'l');
                     break;
                 }
                 if(isDraw()){
                     System.out.println("It's a draw!");
                     draw_count++;
                     game_count++;
-                    score(moves);
+                    score(moves,'d');
                     break;
                 }
                 move=0;
             }
         }
     }
-    public static void score(int moves){
-        int score=(107-moves)*2;
+    public static void score(int moves, char state){
+        int score=(57-moves)*2;
+        if(state=='w')
+            score*=2;
+        else if(state=='l')
+            score/=2;
+        else if(state=='d')
+            score-=10;
         score = Math.max(score, 0);
         System.out.println("Number of moves made in this round: " + moves);
         System.out.println("Score for this round: " + score);
