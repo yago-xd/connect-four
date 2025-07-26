@@ -172,7 +172,7 @@ public class Main {
             time_display.append(hours).append("h ");
         if (ts >= 60)
             time_display.append(minutes).append("m ");
-        time_display.append(seconds).append("s ");
+        time_display.append(seconds).append("s");
         return time_display.toString();
     }
     public static void user_move(){
@@ -191,7 +191,7 @@ public class Main {
                 break;
         }
         user_moves++;
-        String move = "Move "+ user_moves + " at Column " + (col + 1) + " by User";;
+        String move = "Move "+ user_moves + " at Column " + (col + 1) + " (" + timeTaken + ")";
         times.add(move);
         for(int row = 5; row >=0; row--){
             if(board[row][col].equals("⚪")){
@@ -247,6 +247,7 @@ public class Main {
                     draw_count++;
                     game_count++;
                     score(moves,'d');
+                    showMoves();
                     break;
                 }
                 move=1;
@@ -266,6 +267,7 @@ public class Main {
                     loss_count++;
                     game_count++;
                     score(moves,'l');
+                    showMoves();
                     break;
                 }
                 if(isDraw()){
@@ -273,6 +275,7 @@ public class Main {
                     draw_count++;
                     game_count++;
                     score(moves,'d');
+                    showMoves();
                     break;
                 }
                 move=0;
