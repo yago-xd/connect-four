@@ -5,6 +5,7 @@ public class Main {
     private static final Scanner sc = new Scanner(System.in);
     private static final Random rand = new Random();
     private static final ArrayList<String> log = new ArrayList<>();
+    private static final ArrayList<String> history = new ArrayList<>();
     private static final String[][] board = new String[6][7];
     private static String user,comp;
     private static int user_choice;
@@ -269,6 +270,7 @@ public class Main {
     public static void start_game() throws InterruptedException {
         reset_board();
         first_move();
+        String roundSummary;
         while(true) {
             if (move==0){
                 System.out.println("Your move");
@@ -287,6 +289,8 @@ public class Main {
                     update_streak('w');
                     score(total_moves,'w');
                     streak();
+                    roundSummary = "Round " + round + ": Winner - YOU in " + total_moves + " moves";
+                    history.add(roundSummary);
                     showMoves();
                     break;
                 }
@@ -297,6 +301,8 @@ public class Main {
                     update_streak('d');
                     score(total_moves,'d');
                     streak();
+                    roundSummary = "Round " + round + ": Draw in " + total_moves + " moves";
+                    history.add(roundSummary);
                     showMoves();
                     break;
                 }
@@ -319,6 +325,8 @@ public class Main {
                     update_streak('l');
                     score(total_moves,'l');
                     streak();
+                    roundSummary = "Round " + round + ": Winner - Computer in " + total_moves + " moves";
+                    history.add(roundSummary);
                     showMoves();
                     break;
                 }
@@ -329,6 +337,8 @@ public class Main {
                     update_streak('d');
                     score(total_moves,'d');
                     streak();
+                    roundSummary = "Round " + round + ": Draw in " + total_moves + " moves";
+                    history.add(roundSummary);
                     showMoves();
                     break;
                 }
@@ -353,6 +363,8 @@ public class Main {
         while(replay=='y') {
             clearMoves();
             start_game();
+            String roundSummary = "Round " + round + ": Winner - YOU in " + total_moves + " moves";
+            history.add(roundSummary);
             System.out.println("\n------------------------------");
             System.out.print("\nDo you wish to play again? (Y/N): ");
             String replay_input=sc.nextLine().trim().toLowerCase();
@@ -376,6 +388,9 @@ public class Main {
         System.out.println("Wins: " + win_count);
         System.out.println("Losses: " + loss_count);
         System.out.println("Draws: " + draw_count);
+        System.out.println("\nGame History:");
+        for (String roundSummary : history)
+            System.out.println(roundSummary);
         System.out.println("------------------------------\n");
     }
     public static void main(String[] args) throws InterruptedException {
