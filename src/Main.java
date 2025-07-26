@@ -1,11 +1,13 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
 public class Main {
     static final Scanner sc = new Scanner(System.in);
     static final Random rand = new Random();
+    static ArrayList<String> times = new ArrayList<>();
     static String[][] board = new String[6][7];
     static String user,comp;
-    static int user_choice;
+    static int user_choice,user_moves=0;
     static int round=0,move=0;
     static char replay='y';
     static int game_count=0,draw_count=0,loss_count=0,win_count=0;
@@ -113,6 +115,12 @@ public class Main {
         }
         return false;
     }
+    public static void showMoves() {
+        System.out.println("\nMoves made in this round by User: "+user_moves);
+        for (String move : times) {
+            System.out.println(move);
+        }
+    }
     public static void getUser() throws InterruptedException {
         reset_board();
         System.out.println("\nSymbols: (1. \uD83D\uDD34)/(2. \uD83D\uDFE1)");
@@ -182,6 +190,9 @@ public class Main {
             else
                 break;
         }
+        user_moves++;
+        String move = "Move "+ user_moves + " at Column " + (col + 1) + " by User";;
+        times.add(move);
         for(int row = 5; row >=0; row--){
             if(board[row][col].equals("⚪")){
                 board[row][col]=user;
@@ -228,6 +239,7 @@ public class Main {
                     game_count++;
                     win_count++;
                     score(moves,'w');
+                    showMoves();
                     break;
                 }
                 if(isDraw()){
