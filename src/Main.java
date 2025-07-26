@@ -116,10 +116,20 @@ public class Main {
         return false;
     }
     public static void showMoves() {
+        System.out.println("\n------------------------------");
+        sc.nextLine();
+        System.out.print("\nDo you wish to see a log of your moves for this round? (Y/N): ");
+        String log = sc.nextLine().toLowerCase().trim();
+        if(!log.equals("y"))
+            return;
         System.out.println("\nMoves made in this round by User: "+user_moves);
         for (String move : times) {
             System.out.println(move);
         }
+    }
+    public static void clearMoves(){
+        times.clear();
+        user_moves = 0;
     }
     public static void getUser() throws InterruptedException {
         reset_board();
@@ -297,8 +307,8 @@ public class Main {
     public static void run_game() throws InterruptedException {
         replay='y';
         while(replay=='y') {
+            clearMoves();
             start_game();
-            sc.nextLine();
             System.out.println("\n------------------------------");
             System.out.print("\nDo you wish to play again? (Y/N): ");
             String replay_input=sc.nextLine().trim().toLowerCase();
@@ -317,7 +327,7 @@ public class Main {
         System.out.println("Thanks for playing!");
     }
     public static void stats(){
-        System.out.println("\n------------Statistics-------------");
+        System.out.println("\n---------Statistics----------");
         System.out.println("Games Played: " + game_count);
         System.out.println("Wins: " + win_count);
         System.out.println("Losses: " + loss_count);
