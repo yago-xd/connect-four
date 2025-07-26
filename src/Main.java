@@ -7,7 +7,8 @@ public class Main {
     private static final ArrayList<String> log = new ArrayList<>();
     private static final String[][] board = new String[6][7];
     private static String user,comp;
-    private static int user_choice,user_moves=0;
+    private static int user_choice;
+    private static int comp_moves=0,total_moves=0,user_moves=0;
     private static int round=0,move=0;
     private static int game_count=0,draw_count=0,loss_count=0,win_count=0;
     private static int win_streak=0,loss_streak=0,draw_streak=0;
@@ -118,11 +119,13 @@ public class Main {
     public static void showMoves() {
         System.out.println("\n------------------------------");
         sc.nextLine();
-        System.out.print("\nDo you wish to see a log of your moves for this round? (Y/N): ");
+        System.out.print("\nDo you wish to see a log of all moves in this round (Y/N): ");
         String log_ch = sc.nextLine().toLowerCase().trim();
         if(!log_ch.equals("y"))
             return;
         System.out.println("\nMoves made in this round by User: "+user_moves);
+        System.out.println("Moves made in this round by Computer: "+comp_moves);
+        System.out.println("\nMoves Log:");
         for (String move : Main.log) {
             System.out.println(move);
         }
@@ -130,6 +133,8 @@ public class Main {
     public static void clearMoves(){
         log.clear();
         user_moves = 0;
+        comp_moves = 0;
+        total_moves = 0;
     }
     public static void getUser() throws InterruptedException {
         reset_board();
@@ -170,6 +175,7 @@ public class Main {
             comp_move();
             move=0;
         }
+        total_moves++;
         print_board();
     }
     public static String time_convert(long start_dur, long end_dur) {
@@ -201,7 +207,7 @@ public class Main {
                 break;
         }
         user_moves++;
-        String move = "Move "+ user_moves + " at Column " + (col + 1) + " (" + timeTaken + ")";
+        String move = "Move "+ total_moves + " at Column " + (col + 1) + " by User(" +user+")      " + " [" + timeTaken + "]";
         log.add(move);
         for(int row = 5; row >=0; row--){
             if(board[row][col].equals("⚪")){
@@ -215,11 +221,17 @@ public class Main {
     }
     public static void comp_move() throws InterruptedException {
         int col;
+        long startTime = System.currentTimeMillis();
         Thread.sleep(1000);
         do {
             col = rand.nextInt(7);
         }
         while (columnFull(col));
+        long endTime = System.currentTimeMillis();
+        String timeTaken = time_convert(startTime, endTime);
+        comp_moves++;
+        String move = "Move "+ total_moves + " at Column " + (col + 1) + " by Computer(" +comp+")  " + " [" + timeTaken + "]";
+        log.add(move);
         for(int row = 5; row >=0; row--){
             if(board[row][col].equals("⚪")){
                 board[row][col]=comp;
@@ -257,12 +269,11 @@ public class Main {
     public static void start_game() throws InterruptedException {
         reset_board();
         first_move();
-        int moves=1;
         while(true) {
             if (move==0){
                 System.out.println("Your move");
+                total_moves++;
                 user_move();
-                moves++;
                 print_board();
                 if(hasWon(user)){
                     System.out.println("""
@@ -274,7 +285,7 @@ public class Main {
                     game_count++;
                     win_count++;
                     update_streak('w');
-                    score(moves,'w');
+                    score(total_moves,'w');
                     streak();
                     showMoves();
                     break;
@@ -284,7 +295,7 @@ public class Main {
                     draw_count++;
                     game_count++;
                     update_streak('d');
-                    score(moves,'d');
+                    score(total_moves,'d');
                     streak();
                     showMoves();
                     break;
@@ -293,8 +304,8 @@ public class Main {
             }
             if (move==1){
                 System.out.println("Computer's move");
+                total_moves++;
                 comp_move();
-                moves++;
                 print_board();
                 if(hasWon(comp)){
                     System.out.println("""
@@ -306,7 +317,7 @@ public class Main {
                     loss_count++;
                     game_count++;
                     update_streak('l');
-                    score(moves,'l');
+                    score(total_moves,'l');
                     streak();
                     showMoves();
                     break;
@@ -316,7 +327,7 @@ public class Main {
                     draw_count++;
                     game_count++;
                     update_streak('d');
-                    score(moves,'d');
+                    score(total_moves,'d');
                     streak();
                     showMoves();
                     break;
