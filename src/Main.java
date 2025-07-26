@@ -20,7 +20,7 @@ public class Main {
     public static void print_board(){
         int i,j;
         System.out.println("----------------");
-        System.out.println(" 1 2 3 4\u2006 5 6 7");
+        System.out.println(" 1 2 3 4\u2004 5 6 7");
         for(i=0;i<6;i++){
             for(j=0;j<7;j++){
                 System.out.print(board[i][j]);
@@ -154,9 +154,25 @@ public class Main {
         }
         print_board();
     }
+    public static String time_convert(long start_dur, long end_dur) {
+        long ts = (end_dur - start_dur) / 1000;
+        long hours = (ts / 3600);
+        long minutes = (ts % 3600) / 60;
+        long seconds = ts % 60;
+        StringBuilder time_display = new StringBuilder();
+        if (ts >= 3600)
+            time_display.append(hours).append("h ");
+        if (ts >= 60)
+            time_display.append(minutes).append("m ");
+        time_display.append(seconds).append("s ");
+        return time_display.toString();
+    }
     public static void user_move(){
         int col;
+        long startTime = System.currentTimeMillis();
         col=get_valid_input();
+        long endTime = System.currentTimeMillis();
+        String timeTaken = time_convert(startTime, endTime);
         while(true){
             if(columnFull(col)){
                 System.out.print("That column is full. Try another one: ");
@@ -171,6 +187,7 @@ public class Main {
                 board[row][col]=user;
                 System.out.println("You have made your move");
                 System.out.println("You placed at Column "+(col+1));
+                System.out.println("Time taken for this move: " + timeTaken);
                 return;
             }
         }
@@ -202,7 +219,12 @@ public class Main {
                 moves++;
                 print_board();
                 if(hasWon(user)){
-                    System.out.println("You won!");
+                    System.out.println("""
+                            
+                            ***************
+                            *   \u001B[32mYOU WIN!\u001B[0m  *
+                            ***************
+                            """);
                     game_count++;
                     win_count++;
                     score(moves,'w');
@@ -223,7 +245,12 @@ public class Main {
                 moves++;
                 print_board();
                 if(hasWon(comp)){
-                    System.out.println("Computer won!");
+                    System.out.println("""
+                            
+                            ***************
+                            *   \u001B[31mYou Lost!\u001B[0m *
+                            ***************
+                            """);
                     loss_count++;
                     game_count++;
                     score(moves,'l');
