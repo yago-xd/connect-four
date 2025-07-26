@@ -2,15 +2,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
 public class Main {
-    static final Scanner sc = new Scanner(System.in);
-    static final Random rand = new Random();
-    static ArrayList<String> times = new ArrayList<>();
-    static String[][] board = new String[6][7];
-    static String user,comp;
-    static int user_choice,user_moves=0;
-    static int round=0,move=0;
-    static char replay='y';
-    static int game_count=0,draw_count=0,loss_count=0,win_count=0;
+    private static final Scanner sc = new Scanner(System.in);
+    private static final Random rand = new Random();
+    private static final ArrayList<String> log = new ArrayList<>();
+    private static final String[][] board = new String[6][7];
+    private static String user,comp;
+    private static int user_choice,user_moves=0;
+    private static int round=0,move=0;
+    private static int game_count=0,draw_count=0,loss_count=0,win_count=0;
+    private static int win_streak=0,loss_streak=0,draw_streak=0;
     public static void reset_board(){
         int i,j;
         for(i=0;i<6;i++){
@@ -119,16 +119,16 @@ public class Main {
         System.out.println("\n------------------------------");
         sc.nextLine();
         System.out.print("\nDo you wish to see a log of your moves for this round? (Y/N): ");
-        String log = sc.nextLine().toLowerCase().trim();
-        if(!log.equals("y"))
+        String log_ch = sc.nextLine().toLowerCase().trim();
+        if(!log_ch.equals("y"))
             return;
         System.out.println("\nMoves made in this round by User: "+user_moves);
-        for (String move : times) {
+        for (String move : Main.log) {
             System.out.println(move);
         }
     }
     public static void clearMoves(){
-        times.clear();
+        log.clear();
         user_moves = 0;
     }
     public static void getUser() throws InterruptedException {
@@ -202,7 +202,7 @@ public class Main {
         }
         user_moves++;
         String move = "Move "+ user_moves + " at Column " + (col + 1) + " (" + timeTaken + ")";
-        times.add(move);
+        log.add(move);
         for(int row = 5; row >=0; row--){
             if(board[row][col].equals("⚪")){
                 board[row][col]=user;
@@ -229,6 +229,31 @@ public class Main {
             }
         }
     }
+    public static void update_streak(char state) {
+        if(state=='w') {
+            win_streak++;
+            loss_streak = 0;
+            draw_streak = 0;
+        }
+        else if(state=='l') {
+            loss_streak++;
+            win_streak = 0;
+            draw_streak = 0;
+        }
+        else if(state=='d') {
+            draw_streak++;
+            win_streak = 0;
+            loss_streak = 0;
+        }
+    }
+    public static void streak(){
+        if(win_streak > 1)
+            System.out.println("\nYou are on a win-streak of " + win_streak + " wins!");
+        else if(loss_streak > 1)
+            System.out.println("\nYou are on a loss-streak of " + loss_streak + " losses!");
+        else if(draw_streak > 1)
+            System.out.println("\nYou are on a draw-streak of " + draw_streak + " drawn games");
+    }
     public static void start_game() throws InterruptedException {
         reset_board();
         first_move();
@@ -248,7 +273,9 @@ public class Main {
                             """);
                     game_count++;
                     win_count++;
+                    update_streak('w');
                     score(moves,'w');
+                    streak();
                     showMoves();
                     break;
                 }
@@ -256,7 +283,9 @@ public class Main {
                     System.out.println("It's a draw!");
                     draw_count++;
                     game_count++;
+                    update_streak('d');
                     score(moves,'d');
+                    streak();
                     showMoves();
                     break;
                 }
@@ -276,7 +305,9 @@ public class Main {
                             """);
                     loss_count++;
                     game_count++;
+                    update_streak('l');
                     score(moves,'l');
+                    streak();
                     showMoves();
                     break;
                 }
@@ -284,7 +315,9 @@ public class Main {
                     System.out.println("It's a draw!");
                     draw_count++;
                     game_count++;
+                    update_streak('d');
                     score(moves,'d');
+                    streak();
                     showMoves();
                     break;
                 }
@@ -305,7 +338,7 @@ public class Main {
         System.out.println("Score for this round: " + score);
     }
     public static void run_game() throws InterruptedException {
-        replay='y';
+        char replay='y';
         while(replay=='y') {
             clearMoves();
             start_game();
