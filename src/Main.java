@@ -166,6 +166,7 @@ public class Main {
         System.out.print("\nThe first move will be made by: ");
         int first= rand.nextInt(1,3)-1;
         Thread.sleep(1500);
+        total_moves++;
         if(first==0){
             System.out.println("You");
             user_move();
@@ -176,7 +177,6 @@ public class Main {
             comp_move();
             move=0;
         }
-        total_moves++;
         print_board();
     }
     public static String time_convert(long start_dur, long end_dur) {
