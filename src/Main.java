@@ -50,23 +50,58 @@ public class Main {
     }
     public static int get_valid_input(){
         int col;
-        while(true){
+        while (true) {
+            System.out.println("To undo your last move, type 'undo' (without quotes)");
             System.out.print("Enter the column number to make a move: ");
-            if(sc.hasNextInt()){
-                col=sc.nextInt();
-                if(col<1 || col>7) {
-                    System.out.println("Invalid column. Must be between 1 to 7");
-                    sc.nextLine();
-                }
-                else
-                    break;
+            String input = sc.nextLine().trim().toLowerCase().replaceAll(" ", "");
+            if(input.equals("undo")){
+                undo();
+                continue;
             }
-            else{
+            try{
+                col = Integer.parseInt(input);
+                if (col < 1 || col > 7) {
+                    System.out.println("Invalid column. Must be between 1 to 7");
+                } else {
+                    return col - 1;
+                }
+            }
+            catch(NumberFormatException e){
                 System.out.println("Input must be an integer!");
-                sc.next();
             }
         }
-        return col-1;
+    }
+    public static void undo() {
+        if (total_moves == 0) {
+            System.out.println("No moves to undo!");
+            return;
+        }
+        total_moves--;
+        if(move == 0){
+            if (!userMoves.isEmpty()) {
+                int[] lastMove = userMoves.removeLast();
+                board[lastMove[0]][lastMove[1]] = "⚪";
+                user_moves--;
+                move = 1;
+                System.out.println("Your last move has been undone.");
+            }
+            else{
+                System.out.println("No user moves to undo.");
+            }
+        }
+        else{
+            if(!compMoves.isEmpty()){
+                int[] lastMove = compMoves.removeLast();
+                board[lastMove[0]][lastMove[1]] = "⚪";
+                comp_moves--;
+                move = 0;
+                System.out.println("Computer's last move has been undone.");
+            }
+            else{
+                System.out.println("No computer moves to undo.");
+            }
+        }
+        print_board();
     }
     public static boolean columnFull(int col){
         return !board[0][col].equals("⚪");
@@ -121,7 +156,6 @@ public class Main {
     }
     public static void showMoves() {
         System.out.println("\n------------------------------");
-        sc.nextLine();
         System.out.print("\nDo you wish to see a log of all moves in this round (Y/N): ");
         String log_ch = sc.nextLine().toLowerCase().trim();
         if(!log_ch.equals("y"))
@@ -147,6 +181,7 @@ public class Main {
             System.out.print("Enter a valid choice (1/2): ");
             sc.nextLine();
         }
+        sc.nextLine();
         if(user_choice == 1) {
             user="\uD83D\uDD34";
             comp="\uD83D\uDFE1";
