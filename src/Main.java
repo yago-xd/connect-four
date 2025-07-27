@@ -50,7 +50,7 @@ public class Main {
     }
     public static int get_valid_input(){
         int col;
-        while (true) {
+        while(true){
             System.out.println("To undo your last move, type 'undo' (without quotes)");
             System.out.print("Enter the column number to make a move: ");
             String input = sc.nextLine().trim().toLowerCase().replaceAll(" ", "");
@@ -60,9 +60,10 @@ public class Main {
             }
             try{
                 col = Integer.parseInt(input);
-                if (col < 1 || col > 7) {
+                if(col < 1 || col > 7){
                     System.out.println("Invalid column. Must be between 1 to 7");
-                } else {
+                }
+                else{
                     return col - 1;
                 }
             }
@@ -72,7 +73,7 @@ public class Main {
         }
     }
     public static void undo() {
-        if (total_moves == 0) {
+        if(total_moves == 0){
             System.out.println("No moves to undo!");
             return;
         }
@@ -116,7 +117,6 @@ public class Main {
         return true;
     }
     public static boolean hasWon(String symbol){
-        //horizontal
         for(int i=0;i<6;i++){
             for(int j=0;j<=3;j++){
                 if(board[i][j].equals(symbol) && board[i][j+1].equals(symbol) &&
@@ -125,7 +125,6 @@ public class Main {
                 }
             }
         }
-        //vertical
         for(int j=0;j<7;j++){
             for(int i=0;i<=2;i++){
                 if(board[i][j].equals(symbol) && board[i+1][j].equals(symbol) &&
@@ -134,7 +133,6 @@ public class Main {
                 }
             }
         }
-        //main diagonal
         for(int i=0;i<6;i++){
             for(int j=0;j<7;j++){
                 if((i<=2 && j<=3)&& board[i][j].equals(symbol) && board[i+1][j+1].equals(symbol)
@@ -143,7 +141,6 @@ public class Main {
                 }
             }
         }
-        //the other diagonal
         for(int i=0;i<6;i++){
             for(int j=0;j<7;j++){
                 if((i<=2 && j>=3)&& board[i][j].equals(symbol) && board[i+1][j-1].equals(symbol)
@@ -428,7 +425,7 @@ public class Main {
         System.out.println("Wins: " + win_count + " (" + win_perc + "%)");
         System.out.println("Losses: " + loss_count + " (" + loss_perc + "%)");
         System.out.println("Draws: " + draw_count + " (" + draw_perc + "%)");
-        System.out.println("\nGame History:");
+        System.out.println("\nGame History Log:");
         for (String roundSummary : history)
             System.out.println(roundSummary);
         System.out.println("------------------------------\n");

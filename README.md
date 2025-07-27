@@ -120,11 +120,9 @@ Game Loaded
 
 Round 1
 
-The first move will be made by: You
-Enter the column number to make a move: 5
-You have made your move
-You placed at Column 5
-Time taken for this move: 2s
+The first move will be made by: Computer
+Computer has made its move
+Computer placed at Column 5
 ----------------
  1 2 3 4  5 6 7
 ⚪⚪⚪⚪⚪⚪⚪
@@ -132,7 +130,68 @@ Time taken for this move: 2s
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪🟡⚪⚪
+⚪⚪⚪⚪🔴⚪⚪
+Your move
+To undo your last move, type 'undo' (without quotes)
+Enter the column number to make a move: 4
+You have made your move
+You placed at Column 4
+Time taken for this move: 3s
+----------------
+ 1 2 3 4  5 6 7
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪🟡🔴⚪⚪
+Computer's move
+Computer has made its move
+Computer placed at Column 4
+----------------
+ 1 2 3 4  5 6 7
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪🔴⚪⚪⚪
+⚪⚪⚪🟡🔴⚪⚪
+Your move
+To undo your last move, type 'undo' (without quotes)
+Enter the column number to make a move: undo
+Your last move has been undone.
+----------------
+ 1 2 3 4  5 6 7
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪🔴⚪⚪⚪
+⚪⚪⚪⚪🔴⚪⚪
+To undo your last move, type 'undo' (without quotes)
+Enter the column number to make a move: undo
+Computer's last move has been undone.
+----------------
+ 1 2 3 4  5 6 7
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪🔴⚪⚪
+To undo your last move, type 'undo' (without quotes)
+Enter the column number to make a move: 4
+You have made your move
+You placed at Column 4
+Time taken for this move: 8s
+----------------
+ 1 2 3 4  5 6 7
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪🟡🔴⚪⚪
 Computer's move
 Computer has made its move
 Computer placed at Column 7
@@ -143,11 +202,12 @@ Computer placed at Column 7
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪🟡⚪🔴
+⚪⚪⚪🟡🔴⚪🔴
 Your move
-Enter the column number to make a move: 5
+To undo your last move, type 'undo' (without quotes)
+Enter the column number to make a move: 4
 You have made your move
-You placed at Column 5
+You placed at Column 4
 Time taken for this move: 0s
 ----------------
  1 2 3 4  5 6 7
@@ -155,32 +215,33 @@ Time taken for this move: 0s
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪🟡⚪⚪
-⚪⚪⚪⚪🟡⚪🔴
+⚪⚪⚪🟡⚪⚪⚪
+⚪⚪⚪🟡🔴⚪🔴
 Computer's move
 Computer has made its move
-Computer placed at Column 2
+Computer placed at Column 5
 ----------------
  1 2 3 4  5 6 7
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪🟡⚪⚪
-⚪🔴⚪⚪🟡⚪🔴
+⚪⚪⚪🟡🔴⚪⚪
+⚪⚪⚪🟡🔴⚪🔴
 Your move
-Enter the column number to make a move: 5
+To undo your last move, type 'undo' (without quotes)
+Enter the column number to make a move: 4
 You have made your move
-You placed at Column 5
-Time taken for this move: 0s
+You placed at Column 4
+Time taken for this move: 1s
 ----------------
  1 2 3 4  5 6 7
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪🟡⚪⚪
-⚪⚪⚪⚪🟡⚪⚪
-⚪🔴⚪⚪🟡⚪🔴
+⚪⚪⚪🟡⚪⚪⚪
+⚪⚪⚪🟡🔴⚪⚪
+⚪⚪⚪🟡🔴⚪🔴
 Computer's move
 Computer has made its move
 Computer placed at Column 3
@@ -189,45 +250,49 @@ Computer placed at Column 3
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪🟡⚪⚪
-⚪⚪⚪⚪🟡⚪⚪
-⚪🔴🔴⚪🟡⚪🔴
+⚪⚪⚪🟡⚪⚪⚪
+⚪⚪⚪🟡🔴⚪⚪
+⚪⚪🔴🟡🔴⚪🔴
 Your move
-Enter the column number to make a move: 5
+To undo your last move, type 'undo' (without quotes)
+Enter the column number to make a move: 4
 You have made your move
-You placed at Column 5
-Time taken for this move: 0s
+You placed at Column 4
+Time taken for this move: 1s
 ----------------
  1 2 3 4  5 6 7
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪🟡⚪⚪
-⚪⚪⚪⚪🟡⚪⚪
-⚪⚪⚪⚪🟡⚪⚪
-⚪🔴🔴⚪🟡⚪🔴
+⚪⚪⚪🟡⚪⚪⚪
+⚪⚪⚪🟡⚪⚪⚪
+⚪⚪⚪🟡🔴⚪⚪
+⚪⚪🔴🟡🔴⚪🔴
 
 ***************
 *   YOU WIN!  *
 ***************
 
-Number of moves made in this round: 7
-Score for this round: 200
+Number of moves made in this round: 8
+Score for this round: 196
 
 ------------------------------
 
 Do you wish to see a log of all moves in this round (Y/N): y
 
 Moves made in this round by User: 4
-Moves made in this round by Computer: 3
+Moves made in this round by Computer: 4
 
 Moves Log:
-Move 1 at Column 5 by User(🟡)      [2s]
-Move 2 at Column 7 by Computer(🔴)  [1s]
-Move 3 at Column 5 by User(🟡)      [0s]
-Move 4 at Column 2 by Computer(🔴)  [1s]
-Move 5 at Column 5 by User(🟡)      [0s]
-Move 6 at Column 3 by Computer(🔴)  [1s]
-Move 7 at Column 5 by User(🟡)      [0s]
+Move 1 at Column 5 by Computer(🔴)  [1s]
+Move 2 at Column 4 by User(🟡)      [3s]
+Move 3 at Column 4 by Computer(🔴)  [1s]
+Move 2 at Column 4 by User(🟡)      [8s]
+Move 3 at Column 7 by Computer(🔴)  [1s]
+Move 4 at Column 4 by User(🟡)      [0s]
+Move 5 at Column 5 by Computer(🔴)  [1s]
+Move 6 at Column 4 by User(🟡)      [1s]
+Move 7 at Column 3 by Computer(🔴)  [1s]
+Move 8 at Column 4 by User(🟡)      [1s]
 
 ------------------------------
 
@@ -241,7 +306,7 @@ Wins: 1 (100%)
 Losses: 0 (0%)
 Draws: 0 (0%)
 
-Game History:
-Round 1: Winner - YOU in 7 moves
+Game History Log:
+Round 1: Winner - YOU in 8 moves
 ------------------------------
 ```
