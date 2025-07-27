@@ -208,7 +208,7 @@ public class Main {
                 break;
         }
         user_moves++;
-        String move = "Move "+ total_moves + " at Column " + (col + 1) + " by User(" +user+")      " + " [" + timeTaken + "]";
+        String move = "Move "+ total_moves + " at Column " + (col + 1) + " by User(" +user+")     " + " [" + timeTaken + "]";
         log.add(move);
         for(int row = 5; row >=0; row--){
             if(board[row][col].equals("⚪")){
@@ -231,7 +231,7 @@ public class Main {
         long endTime = System.currentTimeMillis();
         String timeTaken = time_convert(startTime, endTime);
         comp_moves++;
-        String move = "Move "+ total_moves + " at Column " + (col + 1) + " by Computer(" +comp+")  " + " [" + timeTaken + "]";
+        String move = "Move "+ total_moves + " at Column " + (col + 1) + " by Computer(" +comp+") " + " [" + timeTaken + "]";
         log.add(move);
         for(int row = 5; row >=0; row--){
             if(board[row][col].equals("⚪")){
@@ -363,8 +363,6 @@ public class Main {
         while(replay=='y') {
             clearMoves();
             start_game();
-            String roundSummary = "Round " + round + ": Winner - YOU in " + total_moves + " moves";
-            history.add(roundSummary);
             System.out.println("\n------------------------------");
             System.out.print("\nDo you wish to play again? (Y/N): ");
             String replay_input=sc.nextLine().trim().toLowerCase();
@@ -383,11 +381,14 @@ public class Main {
         System.out.println("Thanks for playing!");
     }
     public static void stats(){
+        int win_perc = (win_count*100)/game_count;
+        int loss_perc = (loss_count*100)/game_count;
+        int draw_perc = (draw_count*100)/game_count;
         System.out.println("\n---------Statistics----------");
         System.out.println("Games Played: " + game_count);
-        System.out.println("Wins: " + win_count);
-        System.out.println("Losses: " + loss_count);
-        System.out.println("Draws: " + draw_count);
+        System.out.println("Wins: " + win_count + " (" + win_perc + "%)");
+        System.out.println("Losses: " + loss_count + " (" + loss_perc + "%)");
+        System.out.println("Draws: " + draw_count + " (" + draw_perc + "%)");
         System.out.println("\nGame History:");
         for (String roundSummary : history)
             System.out.println(roundSummary);
