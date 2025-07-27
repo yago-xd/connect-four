@@ -6,6 +6,8 @@ public class Main {
     private static final Random rand = new Random();
     private static final ArrayList<String> log = new ArrayList<>();
     private static final ArrayList<String> history = new ArrayList<>();
+    private static final ArrayList<int[]> userMoves = new ArrayList<>();
+    private static final ArrayList<int[]> compMoves = new ArrayList<>();
     private static final String[][] board = new String[6][7];
     private static String user,comp;
     private static int user_choice;
@@ -213,6 +215,7 @@ public class Main {
         for(int row = 5; row >=0; row--){
             if(board[row][col].equals("⚪")){
                 board[row][col]=user;
+                userMoves.add(new int[]{row, col});
                 System.out.println("You have made your move");
                 System.out.println("You placed at Column "+(col+1));
                 System.out.println("Time taken for this move: " + timeTaken);
@@ -236,6 +239,7 @@ public class Main {
         for(int row = 5; row >=0; row--){
             if(board[row][col].equals("⚪")){
                 board[row][col]=comp;
+                compMoves.add(new int[]{row, col});
                 System.out.println("Computer has made its move");
                 System.out.println("Computer placed at Column "+(col+1));
                 return;
