@@ -110,7 +110,7 @@ Computer symbol: 🔴
 Game Loaded
 
 ----------------
- 1 2 3 4  5 6 7
+ 1 2 3 4  5 6 7
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
@@ -120,101 +120,114 @@ Game Loaded
 
 Round 1
 
-The first move will be made by: Computer
-Computer has made its move
-Computer placed at Column 7
-----------------
- 1 2 3 4  5 6 7
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪🔴
-Your move
-Enter the column number to make a move: 3
+The first move will be made by: You
+Enter the column number to make a move: 5
 You have made your move
-You placed at Column 3
+You placed at Column 5
+Time taken for this move: 2s
 ----------------
- 1 2 3 4  5 6 7
+ 1 2 3 4  5 6 7
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
-⚪⚪🟡⚪⚪⚪🔴
-Computer's move
-Computer has made its move
-Computer placed at Column 4
-----------------
- 1 2 3 4  5 6 7
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪🟡🔴⚪⚪🔴
-Your move
-Enter the column number to make a move: 3
-You have made your move
-You placed at Column 3
-----------------
- 1 2 3 4  5 6 7
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪🟡⚪⚪⚪⚪
-⚪⚪🟡🔴⚪⚪🔴
-Computer's move
-Computer has made its move
-Computer placed at Column 4
-----------------
- 1 2 3 4  5 6 7
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪🟡🔴⚪⚪⚪
-⚪⚪🟡🔴⚪⚪🔴
-Your move
-Enter the column number to make a move: 3
-You have made your move
-You placed at Column 3
-----------------
- 1 2 3 4  5 6 7
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⚪⚪🟡⚪⚪⚪⚪
-⚪⚪🟡🔴⚪⚪⚪
-⚪⚪🟡🔴⚪⚪🔴
+⚪⚪⚪⚪🟡⚪⚪
 Computer's move
 Computer has made its move
 Computer placed at Column 7
 ----------------
- 1 2 3 4  5 6 7
+ 1 2 3 4  5 6 7
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
-⚪⚪🟡⚪⚪⚪⚪
-⚪⚪🟡🔴⚪⚪🔴
-⚪⚪🟡🔴⚪⚪🔴
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪🟡⚪🔴
 Your move
-Enter the column number to make a move: 3
+Enter the column number to make a move: 5
 You have made your move
-You placed at Column 3
+You placed at Column 5
+Time taken for this move: 0s
 ----------------
- 1 2 3 4  5 6 7
+ 1 2 3 4  5 6 7
 ⚪⚪⚪⚪⚪⚪⚪
 ⚪⚪⚪⚪⚪⚪⚪
-⚪⚪🟡⚪⚪⚪⚪
-⚪⚪🟡⚪⚪⚪⚪
-⚪⚪🟡🔴⚪⚪🔴
-⚪⚪🟡🔴⚪⚪🔴
-You won!
-Number of moves made in this round: 8
-Score for this round: 196
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪🟡⚪⚪
+⚪⚪⚪⚪🟡⚪🔴
+Computer's move
+Computer has made its move
+Computer placed at Column 2
+----------------
+ 1 2 3 4  5 6 7
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪🟡⚪⚪
+⚪🔴⚪⚪🟡⚪🔴
+Your move
+Enter the column number to make a move: 5
+You have made your move
+You placed at Column 5
+Time taken for this move: 0s
+----------------
+ 1 2 3 4  5 6 7
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪🟡⚪⚪
+⚪⚪⚪⚪🟡⚪⚪
+⚪🔴⚪⚪🟡⚪🔴
+Computer's move
+Computer has made its move
+Computer placed at Column 3
+----------------
+ 1 2 3 4  5 6 7
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪🟡⚪⚪
+⚪⚪⚪⚪🟡⚪⚪
+⚪🔴🔴⚪🟡⚪🔴
+Your move
+Enter the column number to make a move: 5
+You have made your move
+You placed at Column 5
+Time taken for this move: 0s
+----------------
+ 1 2 3 4  5 6 7
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪🟡⚪⚪
+⚪⚪⚪⚪🟡⚪⚪
+⚪⚪⚪⚪🟡⚪⚪
+⚪🔴🔴⚪🟡⚪🔴
+
+***************
+*   YOU WIN!  *
+***************
+
+Number of moves made in this round: 7
+Score for this round: 200
+
+------------------------------
+
+Do you wish to see a log of all moves in this round (Y/N): y
+
+Moves made in this round by User: 4
+Moves made in this round by Computer: 3
+
+Moves Log:
+Move 1 at Column 5 by User(🟡)      [2s]
+Move 2 at Column 7 by Computer(🔴)  [1s]
+Move 3 at Column 5 by User(🟡)      [0s]
+Move 4 at Column 2 by Computer(🔴)  [1s]
+Move 5 at Column 5 by User(🟡)      [0s]
+Move 6 at Column 3 by Computer(🔴)  [1s]
+Move 7 at Column 5 by User(🟡)      [0s]
 
 ------------------------------
 
@@ -222,10 +235,13 @@ Do you wish to play again? (Y/N): n
 
 Thanks for playing!
 
-------------Statistics-------------
+---------Statistics----------
 Games Played: 1
-Wins: 1
-Losses: 0
-Draws: 0
+Wins: 1 (100%)
+Losses: 0 (0%)
+Draws: 0 (0%)
+
+Game History:
+Round 1: Winner - YOU in 7 moves
 ------------------------------
 ```
